@@ -1,5 +1,5 @@
 PODS:
-  - HHUIBase_Swift (0.1.0):
+  - HHUIBase_Swift (0.1.1):
     - MJExtension
   - MJExtension (3.1.0)
 
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HHUIBase_Swift: 178668bca52159446d4db3213c3d2b010611f14a
+  HHUIBase_Swift: 7aecfde476f33a332a0f5b8a257e7bda39d43745
   MJExtension: 6b69b3bef2864fd550ce1a184eda219e321209d2
 
 PODFILE CHECKSUM: b50b390b61e4077b2aed0b26a6b89ab249dde1ee
