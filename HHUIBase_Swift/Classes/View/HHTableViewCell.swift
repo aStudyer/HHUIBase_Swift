@@ -36,7 +36,7 @@ class HHTableViewCell: UITableViewCell {
         }
         return cell as! HHTableViewCell
     }
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(lb_content)
     }

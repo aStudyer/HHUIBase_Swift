@@ -53,7 +53,7 @@ class HHTableViewHeaderFooterView: UITableViewHeaderFooterView {
     override func layoutSubviews() {
         super.layoutSubviews()
         lb_content.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height-1)
-        lb_content.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
+        lb_content.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
     }
     @objc func lb_content_did_click() {
         if let clickBlock = clickBlock {
