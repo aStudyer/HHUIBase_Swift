@@ -14,8 +14,12 @@ open class BaseTableViewController: UITableViewController {
         didSet{
             for(sectionIndex, sectionItem) in dataList.enumerated() {
                 sectionItem.section = sectionIndex
-                for(rowIndex, rowItem) in sectionItem.items.enumerated(){
-                    rowItem.indexPath = IndexPath(row: rowIndex, section: sectionIndex)
+                for(rowIndex, rowItem) in sectionItem.items.enumerated() {
+                    if let title = rowItem.title, title.count > 0 {
+                        rowItem.indexPath = IndexPath(row: rowIndex, section: sectionIndex)
+                    }else{
+                        sectionItem.items.remove(at: rowIndex)
+                    }
                 }
             }
             tableView.reloadData()
