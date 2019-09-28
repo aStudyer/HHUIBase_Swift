@@ -22,7 +22,7 @@ pod 'HHUIBase_Swift'
 
 ## Author
 
-wxGithup, astudyer@163.com
+aStudyer, astudyer@163.com
 
 ## License
 

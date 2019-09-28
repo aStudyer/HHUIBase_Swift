@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>header</key>
+		<string>我是头部标题点我展开</string>
+		<key>footer</key>
+		<string>我是底部标题不可点击</string>
+		<key>destVC</key>
+		<string></string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>点我跳转界面</string>
+				<key>destVC</key>
+				<string>CellDetailVC</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>点我执行操作</string>
+				<key>destVC</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>点我啥也不干</string>
+				<key>destVC</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>header</key>
+		<string>我是头部标题点我跳转界面</string>
+		<key>footer</key>
+		<string>我是底部标题不可点击</string>
+		<key>destVC</key>
+		<string>HeaderDetailVC</string>
+		<key>items</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>header</key>
+		<string>我是头部标题点我执行操作</string>
+		<key>footer</key>
+		<string>我是底部标题不可点击</string>
+		<key>destVC</key>
+		<string></string>
+		<key>items</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>header</key>
+		<string>我没有底部</string>
+		<key>footer</key>
+		<string></string>
+		<key>destVC</key>
+		<string></string>
+		<key>items</key>
+		<array/>
+	</dict>
+</array>
+</plist>

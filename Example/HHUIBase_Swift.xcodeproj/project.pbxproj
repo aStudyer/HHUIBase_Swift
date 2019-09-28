@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1E65A127D8A828BFE59FF94A /* Pods_HHUIBase_Swift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A22C1EACEE82FAE5AE8A2FBF /* Pods_HHUIBase_Swift_Tests.framework */; };
+		2E05B3C8233EF69800B85865 /* MainViewController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E05B3C7233EF69800B85865 /* MainViewController.plist */; };
+		2E05B3CA233EF6FF00B85865 /* HeaderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E05B3C9233EF6FF00B85865 /* HeaderDetailVC.swift */; };
+		2E05B3CC233EF71000B85865 /* CellDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E05B3CB233EF71000B85865 /* CellDetailVC.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* MainViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
@@ -29,11 +32,14 @@
 
 /* Begin PBXFileReference section */
 		237AAEF4CCAA2D1706989E5A /* Pods-HHUIBase_Swift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHUIBase_Swift_Tests.release.xcconfig"; path = "Target Support Files/Pods-HHUIBase_Swift_Tests/Pods-HHUIBase_Swift_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		5D95453BBE20B3EE0884B66B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		2E05B3C7233EF69800B85865 /* MainViewController.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MainViewController.plist; sourceTree = "<group>"; };
+		2E05B3C9233EF6FF00B85865 /* HeaderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDetailVC.swift; sourceTree = "<group>"; };
+		2E05B3CB233EF71000B85865 /* CellDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDetailVC.swift; sourceTree = "<group>"; };
+		5D95453BBE20B3EE0884B66B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* HHUIBase_Swift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHUIBase_Swift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -42,10 +48,10 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		9A9255215C6E2F068B75931A /* Pods-HHUIBase_Swift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHUIBase_Swift_Example.release.xcconfig"; path = "Target Support Files/Pods-HHUIBase_Swift_Example/Pods-HHUIBase_Swift_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A22C1EACEE82FAE5AE8A2FBF /* Pods_HHUIBase_Swift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HHUIBase_Swift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA97A4DBC0DA0E01B92F5C7A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		BA97A4DBC0DA0E01B92F5C7A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BF2E7EFA7C2249BF04FE71EC /* Pods_HHUIBase_Swift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HHUIBase_Swift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00A6E853E66EAD436A491B1 /* Pods-HHUIBase_Swift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHUIBase_Swift_Example.debug.xcconfig"; path = "Target Support Files/Pods-HHUIBase_Swift_Example/Pods-HHUIBase_Swift_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		C24FC8996A73071EA1A7BBE7 /* HHUIBase_Swift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HHUIBase_Swift.podspec; path = ../HHUIBase_Swift.podspec; sourceTree = "<group>"; };
+		C24FC8996A73071EA1A7BBE7 /* HHUIBase_Swift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HHUIBase_Swift.podspec; path = ../HHUIBase_Swift.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D26C1DF92FC7E48A8BC93134 /* Pods-HHUIBase_Swift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHUIBase_Swift_Tests.debug.xcconfig"; path = "Target Support Files/Pods-HHUIBase_Swift_Tests/Pods-HHUIBase_Swift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				607FACD71AFB9204008FA782 /* MainViewController.swift */,
+				2E05B3C7233EF69800B85865 /* MainViewController.plist */,
+				2E05B3C9233EF6FF00B85865 /* HeaderDetailVC.swift */,
+				2E05B3CB233EF71000B85865 /* CellDetailVC.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -147,7 +156,6 @@
 				D26C1DF92FC7E48A8BC93134 /* Pods-HHUIBase_Swift_Tests.debug.xcconfig */,
 				237AAEF4CCAA2D1706989E5A /* Pods-HHUIBase_Swift_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +235,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -249,6 +258,7 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				2E05B3C8233EF69800B85865 /* MainViewController.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,10 +324,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HHUIBase_Swift_Example/Pods-HHUIBase_Swift_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HHUIBase_Swift/HHUIBase_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HHUIBase_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -331,7 +343,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				2E05B3CA233EF6FF00B85865 /* HeaderDetailVC.swift in Sources */,
+				607FACD81AFB9204008FA782 /* MainViewController.swift in Sources */,
+				2E05B3CC233EF71000B85865 /* CellDetailVC.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
