@@ -14,9 +14,43 @@ open class BaseTableViewController: UITableViewController {
         didSet{
             for(sectionIndex, sectionItem) in dataList.enumerated() {
                 sectionItem.section = sectionIndex
+                
+                let sectionSelectorName = String(format: "section_%02zd:", sectionIndex)
+                let sectionSelector = Selector(sectionSelectorName)
+                
+                if self.responds(to: sectionSelector) {
+                    sectionItem.operation = { [weak self] (tableview, section) in
+                        if let self = self {
+                            let item = self.dataList[section]
+                            let sectionSelectorName = String(format: "section_%02zd:", section)
+                            let sectionSelector = Selector(sectionSelectorName)
+                            self.performSelector(onMainThread: sectionSelector, with: item, waitUntilDone: false)
+                        }
+                    }
+                }else {
+                    NSLog("尚未实现方法:%@",sectionSelectorName)
+                }
+                
                 for(rowIndex, rowItem) in sectionItem.items.enumerated() {
                     if let title = rowItem.title, title.count > 0 {
                         rowItem.indexPath = IndexPath(row: rowIndex, section: sectionIndex)
+                        
+                        let rowSelectorName = String(format: "row_%02zd_%02zd:", sectionIndex, rowIndex)
+                        let rowSelector = Selector(rowSelectorName)
+                        
+                        if self.responds(to: rowSelector) {
+                            rowItem.operation = { [weak self] (tableView, indexPath) in
+                                if let self = self {
+                                    let item = self.dataList[indexPath.section].items[indexPath.row]
+                                    let rowSelectorName = String(format: "row_%02zd_%02zd:", indexPath.section, indexPath.row)
+                                    let rowSelector = Selector(rowSelectorName)
+                                    self.performSelector(onMainThread: rowSelector, with: item, waitUntilDone: false)
+                                }
+                            }
+                        }else {
+                            NSLog("尚未实现方法:%@",rowSelectorName)
+                        }
+                        
                     }else{
                         sectionItem.items.remove(at: rowIndex)
                     }
@@ -27,6 +61,7 @@ open class BaseTableViewController: UITableViewController {
     }
     open override func viewDidLoad() {
         super.viewDidLoad()
+        print(type(of: self))
         NSLog("Welcome to %@", NSStringFromClass(type(of: self)))
         
         view.backgroundColor = UIColor.white
