@@ -22,7 +22,7 @@ open class BaseTableViewController: UITableViewController, DataSourcePath {
                         }
                     }
                 }else {
-                    NSLog("尚未实现方法:%@",sectionInfo.selectorName)
+                    print("尚未实现方法:%@",sectionInfo.selectorName)
                 }
                 
                 for(rowIndex, rowItem) in sectionItem.items.enumerated() {
@@ -37,7 +37,7 @@ open class BaseTableViewController: UITableViewController, DataSourcePath {
                                 }
                             }
                         }else {
-                            NSLog("尚未实现方法:%@",rowInfo.selectorName)
+                            print("尚未实现方法:%@",rowInfo.selectorName)
                         }
                         
                     }else{
@@ -50,7 +50,7 @@ open class BaseTableViewController: UITableViewController, DataSourcePath {
     }
     open override func viewDidLoad() {
         super.viewDidLoad()
-        NSLog("Welcome to \(type(of: self))")
+        print("Welcome to \(type(of: self))")
         
         view.backgroundColor = UIColor.white
         tableView.tableFooterView = UIView()
@@ -58,7 +58,7 @@ open class BaseTableViewController: UITableViewController, DataSourcePath {
         loadDataSource()
     }
     deinit {
-        NSLog("\(self) is deinit")
+        print("\(type(of: self)) is deinit")
     }
 }
 // MARK: - UITableViewDataSource

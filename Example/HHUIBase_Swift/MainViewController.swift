@@ -18,14 +18,14 @@ class MainViewController: BaseTableViewController {
 }
 // MARK: - Header Methods
 extension MainViewController {
-    @objc func section_02(_ sectionItem: HHSectionModel) {
+    @objc func section_02(_ item: HHSectionModel) {
         NSLog("执行操作中...")
     }
 }
 
 // MARK: - Cell Methods
 extension MainViewController {
-    @objc func row_00_01(_ rowItem: HHRowModel) {
+    @objc func row_00_01(_ item: HHRowModel) {
         NSLog("点我执行操作...")
     }
 }

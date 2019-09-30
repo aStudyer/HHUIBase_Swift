@@ -18,5 +18,11 @@
 		<key>header</key>
 		<string>嘿嘿</string>
 	</dict>
+	<dict>
+		<key>header</key>
+		<string>HeaderDetailVC</string>
+		<key>destVC</key>
+		<string>HeaderDetailVC</string>
+	</dict>
 </array>
 </plist>
