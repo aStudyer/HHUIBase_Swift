@@ -31,6 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.3'
 
   s.source_files = 'HHUIBase_Swift/Classes/**/*'
+  s.swift_version = '4.0'
   
   # s.resource_bundles = {
   #   'HHUIBase_Swift' => ['HHUIBase_Swift/Assets/*.png']
