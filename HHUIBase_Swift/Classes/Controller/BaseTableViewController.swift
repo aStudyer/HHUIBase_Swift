@@ -9,46 +9,35 @@
 import UIKit
 import MJExtension
 
-open class BaseTableViewController: UITableViewController {
+open class BaseTableViewController: UITableViewController, DataSourcePath {
     public var dataList: [HHSectionModel] = [] {
         didSet{
             for(sectionIndex, sectionItem) in dataList.enumerated() {
                 sectionItem.section = sectionIndex
-                
-                let sectionSelectorName = String(format: "section_%02zd:", sectionIndex)
-                let sectionSelector = Selector(sectionSelectorName)
-                
-                if self.responds(to: sectionSelector) {
+                let sectionInfo = getSectionInfo(with: sectionIndex)
+                if self.responds(to: sectionInfo.selector) {
                     sectionItem.operation = { [weak self] (tableview, section) in
                         if let self = self {
-                            let item = self.dataList[section]
-                            let sectionSelectorName = String(format: "section_%02zd:", section)
-                            let sectionSelector = Selector(sectionSelectorName)
-                            self.performSelector(onMainThread: sectionSelector, with: item, waitUntilDone: false)
+                            self.performSelector(onMainThread: self.getSectionInfo(with: section).selector, with: self.dataList[section], waitUntilDone: false)
                         }
                     }
                 }else {
-                    NSLog("尚未实现方法:%@",sectionSelectorName)
+                    NSLog("尚未实现方法:%@",sectionInfo.selectorName)
                 }
                 
                 for(rowIndex, rowItem) in sectionItem.items.enumerated() {
                     if let title = rowItem.title, title.count > 0 {
-                        rowItem.indexPath = IndexPath(row: rowIndex, section: sectionIndex)
-                        
-                        let rowSelectorName = String(format: "row_%02zd_%02zd:", sectionIndex, rowIndex)
-                        let rowSelector = Selector(rowSelectorName)
-                        
-                        if self.responds(to: rowSelector) {
+                        let indexPath = IndexPath(row: rowIndex, section: sectionIndex)
+                        rowItem.indexPath = indexPath
+                        let rowInfo = getRowInfo(with: indexPath)
+                        if self.responds(to: rowInfo.selector) {
                             rowItem.operation = { [weak self] (tableView, indexPath) in
                                 if let self = self {
-                                    let item = self.dataList[indexPath.section].items[indexPath.row]
-                                    let rowSelectorName = String(format: "row_%02zd_%02zd:", indexPath.section, indexPath.row)
-                                    let rowSelector = Selector(rowSelectorName)
-                                    self.performSelector(onMainThread: rowSelector, with: item, waitUntilDone: false)
+                                    self.performSelector(onMainThread: self.getRowInfo(with: indexPath).selector, with: self.dataList[indexPath.section].items[indexPath.row], waitUntilDone: false)
                                 }
                             }
                         }else {
-                            NSLog("尚未实现方法:%@",rowSelectorName)
+                            NSLog("尚未实现方法:%@",rowInfo.selectorName)
                         }
                         
                     }else{
@@ -61,20 +50,15 @@ open class BaseTableViewController: UITableViewController {
     }
     open override func viewDidLoad() {
         super.viewDidLoad()
-        print(type(of: self))
-        NSLog("Welcome to %@", NSStringFromClass(type(of: self)))
+        NSLog("Welcome to \(type(of: self))")
         
         view.backgroundColor = UIColor.white
         tableView.tableFooterView = UIView()
         
-        let fileName = "\(NSStringFromClass(type(of: self)).components(separatedBy: ".").last!).plist"
-        let path = Bundle.main.path(forResource: fileName, ofType: nil)
-        if let path = path, FileManager.default.fileExists(atPath: path) {
-            dataList = HHSectionModel.mj_objectArray(withFilename: fileName) as! [HHSectionModel]
-        }
+        loadDataSource()
     }
     deinit {
-        NSLog("%@ is deinit", NSStringFromClass(type(of: self)))
+        NSLog("\(self) is deinit")
     }
 }
 // MARK: - UITableViewDataSource
@@ -100,16 +84,7 @@ extension BaseTableViewController {
         let sectionItem = dataList[indexPath.section]
         let rowItem = sectionItem.items[indexPath.row]
         if let destVcName = rowItem.destVC, destVcName.count > 0 {
-            var destVC: UIViewController?
-            if Bundle.main.path(forResource: destVcName, ofType: "storyboard") != nil {
-                destVC = UIStoryboard(name: destVcName, bundle: nil).instantiateInitialViewController()
-            } else if let nameSpace = Utils.getNameSpace(), let destVcType = NSClassFromString(nameSpace + "." +  destVcName) as? UIViewController.Type {
-                destVC = destVcType.init()
-            }
-            if let destVC = destVC {
-                destVC.title = rowItem.title
-                navigationController?.pushViewController(destVC, animated: true)
-            }
+            showDestVC(destVcName, title: rowItem.title)
         }else if let operation = rowItem.operation {
             operation(tableView, indexPath)
         }
@@ -127,16 +102,7 @@ extension BaseTableViewController {
             }
             let sectionItem = self.dataList[section]
             if let destVcName = sectionItem.destVC, destVcName.count > 0 {
-                var destVC: UIViewController?
-                if Bundle.main.path(forResource: destVcName, ofType: "storyboard") != nil {
-                    destVC = UIStoryboard(name: destVcName, bundle: nil).instantiateInitialViewController()
-                } else if let nameSpace = Utils.getNameSpace(), let destVcType = NSClassFromString(nameSpace + "." +  destVcName) as? UIViewController.Type {
-                    destVC = destVcType.init()
-                }
-                if let destVC = destVC {
-                    destVC.title = sectionItem.header
-                    self.navigationController?.pushViewController(destVC, animated: true)
-                }
+                self.showDestVC(destVcName, title: sectionItem.header)
             }else if let operation = sectionItem.operation {
                 operation(tableView, section)
             }else{
@@ -172,4 +138,29 @@ extension BaseTableViewController {
         }
         return 40
     }
+}
+extension BaseTableViewController {
+    private func showDestVC(_ destVcName: String, title: String?){
+        var destVC: UIViewController?
+        if Bundle.main.path(forResource: destVcName, ofType: "storyboard") != nil {
+            destVC = UIStoryboard(name: destVcName, bundle: nil).instantiateInitialViewController()
+        } else if let nameSpace = Utils.getNameSpace(), let destVcType = NSClassFromString(nameSpace + "." +  destVcName) as? UIViewController.Type {
+            destVC = destVcType.init()
+        }
+        if let destVC = destVC {
+            destVC.title = title
+            show(destVC, sender: nil)
+        }
+    }
+    private func getSectionInfo(with section: NSInteger) -> (selectorName: String, selector: Selector) {
+        let selectorName = String(format: "section_%02zd:", section)
+        let selector = Selector(selectorName)
+        return (selectorName, selector)
+    }
+    private func getRowInfo(with indexPath: IndexPath) -> (selectorName: String, selector: Selector) {
+        let selectorName = String(format: "row_%02zd_%02zd:", indexPath.section, indexPath.row)
+        let selector = Selector(selectorName)
+        return (selectorName, selector)
+    }
+    
 }

@@ -13,6 +13,7 @@ class MainViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "首页"
+        loadDataSource(from: "Main")
     }
 }
 // MARK: - Header Methods

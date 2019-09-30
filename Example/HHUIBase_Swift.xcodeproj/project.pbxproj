@@ -18,6 +18,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7AAFB73F3DB3EDE79F8661C8 /* Pods_HHUIBase_Swift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2E7EFA7C2249BF04FE71EC /* Pods_HHUIBase_Swift_Example.framework */; };
+		8D2FBD302341D28B00886A38 /* Main.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D2FBD2F2341D28B00886A38 /* Main.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		607FACE51AFB9204008FA782 /* HHUIBase_Swift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHUIBase_Swift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		8D2FBD2F2341D28B00886A38 /* Main.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Main.plist; sourceTree = "<group>"; };
 		9A9255215C6E2F068B75931A /* Pods-HHUIBase_Swift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHUIBase_Swift_Example.release.xcconfig"; path = "Target Support Files/Pods-HHUIBase_Swift_Example/Pods-HHUIBase_Swift_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A22C1EACEE82FAE5AE8A2FBF /* Pods_HHUIBase_Swift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HHUIBase_Swift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA97A4DBC0DA0E01B92F5C7A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* MainViewController.swift */,
 				2E05B3C7233EF69800B85865 /* MainViewController.plist */,
+				8D2FBD2F2341D28B00886A38 /* Main.plist */,
 				2E05B3C9233EF6FF00B85865 /* HeaderDetailVC.swift */,
 				2E05B3CB233EF71000B85865 /* CellDetailVC.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -255,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D2FBD302341D28B00886A38 /* Main.plist in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
