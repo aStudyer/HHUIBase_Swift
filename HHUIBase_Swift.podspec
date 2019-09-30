@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HHUIBase_Swift'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = 'A short description of HHUIBase_Swift.'
 
 # This description is used to generate tags and improve search results.
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/wxGithup/HHUIBase_Swift'
+  s.homepage         = 'https://github.com/aStudyer/HHUIBase_Swift.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'wxGithup' => 'astudyer@163.com' }
-  s.source           = { :git => 'https://github.com/wxGithup/HHUIBase_Swift.git', :tag => s.version.to_s }
+  s.author           = { 'aStudyer' => 'astudyer@163.com' }
+  s.source           = { :git => 'https://github.com/aStudyer/HHUIBase_Swift.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.3'
